@@ -1,14 +1,26 @@
-// We need to import the file in main.ts for the file to be executed!!
-console.log('TypeScript is awesome!')
+let awesomeName: string = 'Rawdha-tul-Jannah'
+// awesomeName = 23; The variable awesomeName can only hold string variabes
 
-interface someValue {
-  name: string
-  age: number
+let isRaining: boolean = true
+isRaining = false // Raining can only hold true or false and nothing else
+
+let primeNumber = 23 // This is type Inference in action, we didn't used type annotation explicityly
+
+primeNumber = 7 // It can hold any number types
+
+// CHALLENGE-1:
+let goal = 'Keep trying put efforts & then trust ALLAH'
+goal.toUpperCase()
+
+let balanceInBank: number = 3456
+console.log('Initial Balance')
+console.log('After Withdrawal of Rs 1000')
+balanceInBank = balanceInBank - 1000
+console.log(balanceInBank)
+
+let isBankOpen = false
+if (isBankOpen) {
+  console.log('Visit the bank')
+} else {
+  console.log('Do not visit the bank')
 }
-
-let person: someValue = {
-  name: 'Shakeel Bhai',
-  age: 31
-}
-
-console.log(person)
