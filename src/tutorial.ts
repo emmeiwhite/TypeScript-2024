@@ -24,3 +24,10 @@ if (isBankOpen) {
 } else {
   console.log('Do not visit the bank')
 }
+
+// Here is a Gotcha, In case we assign wrong types and console, the output will still work in the development but during build the typeScript checks will fail and we cannot deploy the production ready application
+
+let color: string = 'white'
+color = 34
+
+console.log(color)
