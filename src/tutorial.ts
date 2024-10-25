@@ -270,3 +270,13 @@ function calculatePrice(price: number, discount?: number): number {
 }
 
 let priceAfterDiscount = calculatePrice(100, 20)
+
+/** --- Default Parameter --- */
+function finalScore(initialScore: number, penaltyScore: number = 0): number {
+  return initialScore + penaltyScore
+}
+
+const scoreAfterPenalty = finalScore(10, 3)
+// const scoreBeforePenalty = finalScore(10) Here typeScript started to yell,so we can set the default value
+
+const scoreBeforePenalty = finalScore(10)
