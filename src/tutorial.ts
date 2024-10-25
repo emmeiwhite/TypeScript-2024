@@ -171,7 +171,7 @@ greeting('Imran Rafiq Rather')
 
 /** return type  */
 
-function calculateDiscount(price: number): number {
+function calculateDiscount(price: number) {
   let couponApplied = true
 
   if (couponApplied) {
@@ -184,7 +184,7 @@ function calculateDiscount(price: number): number {
 
 const finalPrice = calculateDiscount(345)
 
-/** --- Be careful with any type --- */
+/** --- Be careful with any type  --- */
 
 function addThree(value: any) {
   let anotherValue: number = 3
@@ -197,3 +197,6 @@ const finalValue = addThree(40) // any 'type'
 const someValue = finalValue // any 'type'
 
 someValue.dummyMethod() // This is weird
+/** TypeScript didn't inferred type in this case and expects dummyMethod to be there as part of return */
+
+// return <any type> + <number type> = any type! This is weird & instead of TypeScript noticing this error for us during development, we find this error in the run-time in the console.
