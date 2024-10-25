@@ -265,8 +265,8 @@ function checkNumbers(value: number): boolean {
 console.log(checkNumbers(45))
 
 /** --- Optional Parameter --- */
-function calculatePrice(price: number, discount: number): number {
-  return price - discount
+function calculatePrice(price: number, discount?: number): number {
+  return price - (discount || 0)
 }
 
 let priceAfterDiscount = calculatePrice(100, 20)
