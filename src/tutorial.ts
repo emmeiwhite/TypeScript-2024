@@ -280,3 +280,16 @@ const scoreAfterPenalty = finalScore(10, 3)
 // const scoreBeforePenalty = finalScore(10) Here typeScript started to yell,so we can set the default value
 
 const scoreBeforePenalty = finalScore(10)
+
+/** --- Rest Parameters --- */
+
+function addNumbers(result: string, ...numbers: number[]): string {
+  const total = numbers.reduce((acc, num) => {
+    return acc + num
+  })
+
+  return `${result} ${total}`
+}
+
+const totalAddResult = addNumbers('The total is', 1, 2, 3, 4, 5, 6)
+console.log(totalAddResult)
