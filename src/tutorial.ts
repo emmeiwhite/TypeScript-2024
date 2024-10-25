@@ -198,6 +198,7 @@ const finalValue = addThree(40) // any 'type'
 
 const someValue = finalValue // any 'type'
 
+/** DAY-4 (But after a delay, which must be avoided from now onwards) Friday Oct 25-10-2024 */
 /* ---someValue.dummyMethod() --- */
 // This is weird
 /** TypeScript didn't inferred type in this case and expects dummyMethod to be there as part of return */
@@ -220,3 +221,45 @@ function checkProgress(level: number): string {
 }
 
 checkProgress(7)
+
+/** CHALLENGE of the day:
+ * - Create a new array of names
+ * - Write a new function which checks whether the name is in your array or not. The function should take the name as parameter and return a boolean
+ * - Use this function to check if various names are in your function and log the results
+ */
+
+const names: string[] = ['sahil', 'saqib', 'mr. malik', 'mumin', 'haris']
+
+/* --
+function checkNames(name: string): boolean {
+  names.forEach(user => {
+    if (user === name) {
+      return true
+    }
+  })
+  return false
+}
+  ---*/
+
+// console.log(checkNames('mumin'))
+// Bad Code: Doesn't work: With forEach() we cannot break from the forLoop or from the outer function, we must use for loop, for of loop or some
+
+function checkNames(name: string): boolean {
+  for (let user of names) {
+    if (user === name) {
+      return true
+    }
+  }
+  return false
+}
+
+console.log(checkNames('mr. malik'))
+
+//  We can use includes() function as well
+
+const values: number[] = [23, 45, 67, 98]
+function checkNumbers(value: number): boolean {
+  return values.includes(value)
+}
+
+console.log(checkNumbers(45))
