@@ -14,26 +14,28 @@ primeNumber = 7 // It can hold any number types
 let goal = 'Keep trying put efforts & then trust ALLAH'
 goal.toUpperCase()
 
-console.log(awesomeName, primeNumber, goal)
+// console.log(awesomeName, primeNumber, goal)
 let balanceInBank: number = 3456
-console.log('Initial Balance')
-console.log('After Withdrawal of Rs 1000')
+// console.log('Initial Balance')
+// console.log('After Withdrawal of Rs 1000')
 balanceInBank = balanceInBank - 1000
-console.log(balanceInBank)
+// console.log(balanceInBank)
 
+/* ----
 let isBankOpen = false
 if (isBankOpen) {
   console.log('Visit the bank')
 } else {
   console.log('Do not visit the bank')
 }
+  */
 
 // Here is a Gotcha, In case we assign wrong types and console, the output will still work in the development but during build the typeScript checks will fail and we cannot deploy the production ready application
 
 let color: string = 'white'
 // color = 35
 
-console.log(color)
+// console.log(color)
 
 // Day-1 Resuming learning (Wed 25-2024) Move on "Himmate Mardaan MadDade Khuda!"
 
@@ -196,7 +198,25 @@ const finalValue = addThree(40) // any 'type'
 
 const someValue = finalValue // any 'type'
 
-someValue.dummyMethod() // This is weird
+/* ---someValue.dummyMethod() --- */
+// This is weird
 /** TypeScript didn't inferred type in this case and expects dummyMethod to be there as part of return */
 
 // return <any type> + <number type> = any type! This is weird & instead of TypeScript noticing this error for us during development, we find this error in the run-time in the console.
+
+function sum(num1: number, num2: number): number {
+  return num1 + num2
+}
+
+// console.log(sum(23, 45))
+
+function checkProgress(level: number): string {
+  if (level > 8) {
+    console.log('Mastery')
+    return 'mastery'
+  }
+
+  return 'beginner'
+}
+
+checkProgress(7)
