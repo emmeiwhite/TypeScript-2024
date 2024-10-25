@@ -301,3 +301,21 @@ function logMessage(message: string): void {
   console.log(message)
 }
 logMessage('Stay Away From Prohibitions, Follow Your Lord!')
+
+// Challenge:
+
+function processInput(value: string | number) {
+  if (typeof value === 'string') {
+    console.log(value.toUpperCase())
+  } else {
+    //TypeScript acts as a type guard: since if value is not string then it would be a number
+    console.log(value * 2)
+  }
+
+  // if (typeof value === 'number') {
+  //   console.log(value * 2)
+  // }
+}
+
+processInput('two')
+processInput(2)
