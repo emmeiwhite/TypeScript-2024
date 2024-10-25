@@ -6,7 +6,7 @@ let isRaining: boolean = true
 isRaining = false // Raining can only hold true or false and nothing else
 if (isRaining) {
 }
-let primeNumber = 23 // This is type Inference in action, we didn't used type annotation explicityly
+let primeNumber = 23 // This is type Inference in action, we didn't used type annotation explicitly
 
 primeNumber = 7 // It can hold any number types
 
@@ -154,3 +154,46 @@ let product3 = { title: 'silver ring' }
 let latestProducts: { title: string; price?: number }[] // here we declared an array of objects
 
 latestProducts = [product1, product2, product3]
+
+/** Day-3: functions  */
+
+function greeting(name: string) {
+  return `Hello ${name.toUpperCase()}`
+}
+
+// 3 ways to set the type of parameter
+// - any (explicitly)
+// - tsconfig file
+// - setting the type for each parameter so that the correct type is passed to the function
+
+greeting('Imran Rafiq Rather')
+// greeting(23) ; TypeScript just starts to yell at us here
+
+/** return type  */
+
+function calculateDiscount(price: number): number {
+  let couponApplied = true
+
+  if (couponApplied) {
+    // return 'Discount of 10%'
+    return price * 0.9
+  }
+
+  return price
+}
+
+const finalPrice = calculateDiscount(345)
+
+/** --- Be careful with any type --- */
+
+function addThree(value: any) {
+  let anotherValue: number = 3
+
+  return value + anotherValue
+}
+
+const finalValue = addThree(40) // any 'type'
+
+const someValue = finalValue // any 'type'
+
+someValue.dummyMethod() // This is weird
