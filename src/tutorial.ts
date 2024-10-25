@@ -293,3 +293,11 @@ function addNumbers(result: string, ...numbers: number[]): string {
 
 const totalAddResult = addNumbers('The total is', 1, 2, 3, 4, 5, 6)
 console.log(totalAddResult)
+
+/** ---
+ * void type: If we decide not to return anything from a function, then we can use the void type --- */
+
+function logMessage(message: string): void {
+  console.log(message)
+}
+logMessage('Stay Away From Prohibitions, Follow Your Lord!')
