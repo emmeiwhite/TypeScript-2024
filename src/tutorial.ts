@@ -253,7 +253,7 @@ function checkNames(name: string): boolean {
   return false
 }
 
-console.log(checkNames('mr. malik'))
+// console.log(checkNames('mr. malik'))
 
 //  We can use includes() function as well
 
@@ -263,3 +263,10 @@ function checkNumbers(value: number): boolean {
 }
 
 console.log(checkNumbers(45))
+
+/** --- Optional Parameter --- */
+function calculatePrice(price: number, discount: number): number {
+  return price - discount
+}
+
+let priceAfterDiscount = calculatePrice(100, 20)
