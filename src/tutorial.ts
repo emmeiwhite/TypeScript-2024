@@ -340,3 +340,23 @@ const ferrari = {
 }
 
 moveVehicle(ferrari)
+
+/** ---
+ *  Notice, createStudent expects id as number and name as a string, but we are also passing gmail in the below student object.
+ *
+ *  Is that an issue for TypeScript?
+ *  The answer is No. For the createStudent function the TypeScript only expects  a student type is being passed having at least name & id. So when we are passing student object which also has a gmail property, TypeScript does not complain. However, if we pass the object in the object literal form, we notice that TypeScript Complains.
+ *
+ * ---*/
+const student = {
+  id: 25,
+  name: 'imran',
+  gmail: 'imran@gmail.com'
+}
+function createStudent(student: { id: number; name: string }): void {
+  const { id, name } = student
+  console.log(`ID: ${id} & NAME: ${name}`)
+}
+
+createStudent(student)
+createStudent({ id: 24, name: 'anna', gmail: 'anna@gmail.com' })
