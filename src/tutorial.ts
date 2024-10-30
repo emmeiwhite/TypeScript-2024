@@ -328,3 +328,15 @@ function greetStudent({ id }: { id: number }): { id: number; isPresent: boolean 
 
 const student1 = greetStudent({ id: 34 })
 console.log(student1)
+
+// alternative
+function moveVehicle(vehicle: { tyres: number; color: string }): void {
+  console.log(`Car details: Total tyres = ${vehicle.tyres} & Color = ${vehicle.color}`)
+}
+
+const ferrari = {
+  tyres: 4,
+  color: 'blue'
+}
+
+moveVehicle(ferrari)
