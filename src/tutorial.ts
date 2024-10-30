@@ -319,3 +319,12 @@ function processInput(value: string | number) {
 
 processInput('two')
 processInput(2)
+
+/** --- Day-5: 30-Oct-2024   --- */
+
+function greetStudent({ id }: { id: number }): { id: number; isPresent: boolean } {
+  return { id, isPresent: id % 2 === 0 }
+}
+
+const student1 = greetStudent({ id: 34 })
+console.log(student1)
