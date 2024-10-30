@@ -52,3 +52,31 @@ function printStaffDetails(staff: Staff): void {
 
 printStaffDetails(alice)
 printStaffDetails(bob)
+
+/** --- Intersection Type: I really like this one ! --- */
+
+type Book = {
+  author: string
+  price: number
+  isAvailable: boolean
+}
+
+const book1 = {
+  author: 'emmei',
+  price: 23,
+  isAvailable: true
+}
+
+const book2 = {
+  author: 'sahil',
+  price: 33,
+  isAvailable: true
+}
+
+// This is an example of Intersection Type
+const discountedBook: Book & { discount: number } = {
+  author: 'sahil',
+  price: 33,
+  isAvailable: true,
+  discount: 0.2
+}
