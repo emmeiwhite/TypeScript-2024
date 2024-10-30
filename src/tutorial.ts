@@ -360,3 +360,21 @@ function createStudent(student: { id: number; name: string }): void {
 
 createStudent(student)
 createStudent({ id: 24, name: 'anna', gmail: 'anna@gmail.com' })
+
+/** Challenge of the day: Line 444 from the REAMDE.md */
+
+// Default value for reverse property within the config object!
+function processData(
+  input: number | string,
+  config: { reverse: boolean } = { reverse: false }
+): string | number {
+  if (typeof input === 'number') {
+    return input * input
+  } else {
+    return config.reverse ? input.toUpperCase().split('').reverse().join('') : input.toUpperCase()
+  }
+}
+
+console.log(processData(10))
+console.log(processData('Hello'))
+console.log(processData('We are here', { reverse: true }))
